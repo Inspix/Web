@@ -13,27 +13,53 @@
       to { left: 175px; }
 }
 
+@keyframes pulse {
+	0% {
+		width: 22px;
+		padding-right: 3px;
+	}
+	50% {
+		width: 18px;
+		padding-right: 7px;
+	}
+	100% {
+		width: 20px;
+		padding-right: 5px;
+	}
+}
+
 * {
 	margin: 0;
 	padding: 0;
-	color: #fff;	
+	color: #fff;
+}
+
+a {
+	color:#fff;
+	transition:0.5s;
+}
+
+a:hover {
+	color:#aaf;
 }
 
 #wrapper {
-	display: block;
-	background-color: #222
+	position:relative;
+	left:0;
+	right: 0;
+	margin: auto;
+	width: 1024px;
+	background-color: #fff;
 }
 
 #head {
 	display: block;
-	width: 100%;
-	height: auto;
+	width: 100%;	
+	height: 150px;
 	background-color: #113;
 }
 
 #head h1 {
-	width: 100%;
-	padding:10px;
 	padding-top:50px; 
 	text-align: center;
 	font-size: 3em;
@@ -41,15 +67,34 @@
 	color:#fff;
 }
 
+/* Sidebar styling */
+
+#sidebar {
+	position: relative;
+	display:block;
+	z-index: 50;
+	width:175px;
+	height: auto;
+	background-color: #333;
+}
+
+/* Sidebar -> Menu Style*/
+
+#headmenu {
+	position: relative;
+	z-index: 2;
+}
+
 #headmenu ,ul.submenu,ul.submenutwo {
 	list-style-type: none;
+	
 }
 
 #headmenu li {
-	width: 175px;
-	position:relative;
+	width:175px;
 	float:left;
-	text-align: center;
+	position:relative;
+	text-align: center;	
 }
 
 #headmenu a {
@@ -57,49 +102,112 @@
 	display: block;
 	width: 175px;
 	height: 35px;
-	line-height: 35px;	
+	line-height: 35px;
 	background-color: #333;
 }
 
 #headmenu li:hover > a {
 	background-color: #444;
-	color:#77f;	
-	transition:0.5s;
-	
 }
 
 #headmenu li:hover a:hover {
-	color:#aaf;	
-	transition:0.5s;
+	color:#aaf;
 }
 
 #headmenu ul.submenu {
 	display: none;
 	position: absolute;
-	opacity: 0;
-	top:35px;
-	left: 0px;
-	z-index: 0;
-}
-
-#headmenu ul.submenutwo {
-	display: none;
-	opacity: 0;
-	position: absolute;
-	top:0px;
+	top: 0px;
 	left: 175px;
 	z-index: -1;
 }
 
+#headmenu ul.submenutwo {
+	display: none;
+	position: absolute;
+	z-index: -2;
+	top:0px;
+	left: 175px;
+}
+
 #headmenu li:hover .submenu {
 	display: block;
-	opacity: 1;
-	animation: fadeIn 0.5s linear;
+	animation: slideRight 0.2s ease-in both;
 
 }
 
 #headmenu .submenu li:hover .submenutwo {
 	display: block;
-	opacity: 1;
-	animation: fadeIn 0.5s,slideRight 0.2s ease-in both;
+	animation: slideRight 0.2s ease-in both;
+}
+
+/* Sidebar -> Links style */
+
+#links {
+	display: inline-block;
+	position: relative;
+	z-index: 50;
+	background-color: #333;
+	border-top: 2px solid #555;
+	padding-bottom: 10px;
+	width: 175px;
+	height: auto;
+}
+
+#links h4 {
+	text-align: center;
+	border-bottom: 1px solid #555;
+	line-height: 25px;
+}
+
+#links a {
+	display:block;
+	width: 175px;
+	padding-top:5px;
+	text-decoration: none;
+	text-align: center;	
+	
+}
+
+#links a:hover > svg {	
+	animation: pulse 1s linear infinite;
+}
+
+#links a svg {
+	fill:white;
+	padding-right: 5px;
+	width: 20px;
+	height: 20px;
+}
+
+#links a img {
+	padding-right: 5px;
+	width: 20px;
+	height: 20px;
+}
+
+#iconsmention {
+	border-top: 2px solid #555;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	text-align: center;
+	font-size: 0.6em;
+}
+
+/* Content style */
+#content {
+	position: absolute;
+	width: 849px;
+	height: auto;
+	top:150px;
+	left: 175px;
+	background-color: #007;
+
+
+}
+
+#content p {
+	padding: 15px;
 }
