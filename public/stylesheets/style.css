@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+html, body {
+    height: 100%
+}
+
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #00B7FF;
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
+    transition: color 0.5s ease;
+}
+
+a:hover {
+    color: white;
+}
+
+.page {
+    margin: auto;
+    width: 75%;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: transform 0.5s ease;
+    -moz-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+}
+
+.mainHeader {
+    display: block;
+    background: #fff;
+}
+
+.mainHeader img {
+    padding-left: 50px;
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+
+.mainHeader h1 {
+    width: auto;
+    font-size: 3em;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+}
+
+.toggle-symbol {
+    color: #00B7FF;
+    position: fixed;
+    z-index: 10;
+    left: 10px;
+    top: 0;
+    font-size: 30px;
+    -webkit-transition: transform 0.5s ease;
+    -moz-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+}
+
+#nav-bar-toggle, #projects-toggle {
+    display: none;
+}
+
+#nav-bar-toggle:checked ~ nav {
+    left: 0;
+}
+
+#nav-bar-toggle:checked ~ .page {
+    -webkit-transform: translateX(12.5%);
+    -moz-transform: translateX(12.5%);
+    -o-transform: translateX(12.5%);
+    transform: translateX(12.5%);
+}
+
+#nav-bar-toggle:checked ~ .toggle-symbol {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+nav {
+    position: fixed;
+    left: -200px;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: #040404;
+    -webkit-transition: left 0.5s ease;
+    -moz-transition: left 0.5s ease;
+    -o-transition: left 0.5s ease;
+    transition: left 0.5s ease;
+}
+
+nav .mainMenu {
+    position: absolute;
+    top: 30px;
+}
+
+nav a {
+    display:block;
+    padding:5px;
+}
+
+nav a:hover {
+    background-color: #141414;
+}
+
+.sub-menu-container {
+    display:block;
+    position:relative;
+    overflow: hidden;
+    max-height: 0;
+    padding-left:7px;
+    -webkit-transition: max-height 0.5s ease;
+    -moz-transition: max-height 0.5s ease;
+    -o-transition: max-height 0.5s ease;
+    transition: max-height 0.5s ease;
+}
+
+.projects {
+    display:block;
+    padding: 5px;
+    color:#00B7FF;
+    transition: color 0.5s;
+}
+
+.projects:hover {
+    cursor:pointer;
+    color:white;
+    background: #141414;
+}
+
+#projects-toggle:checked ~ .sub-menu-container {
+    max-height: 600px;
+    -webkit-transition: max-height 1.5s ease;
+    -moz-transition: max-height 1.5s ease;
+    -o-transition: max-height 1.5s ease;
+    transition: max-height 1.5s ease;
+
+}
+
+#projects-toggle:checked ~ .projects {
+    background-color: #141414;
+}

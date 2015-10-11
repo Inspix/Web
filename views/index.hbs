@@ -1,0 +1,24 @@
+ <div class="page">
+    <header class="mainHeader">
+        <img src="images/logo.png">
+        <h1>{{title}}</h1>
+    </header>
+
+    <div class="mainContent">
+        <article>
+            <header>
+                {{#if mainArticle}}
+                    <h2>
+                        {{mainArticle.Header}}
+                    </h2>
+                    <h5>
+                        {{mainArticle.Info}}
+                    </h5>
+                </header>
+                    <p class="articleText">{{mainArticle.Text}}</p>
+                {{~^~}}
+                    <h2>No articles</h2>
+                {{/if}}
+        </article>
+    </div>
+ </div>
