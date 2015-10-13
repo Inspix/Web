@@ -1,25 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var projects = require('../modules/projects');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
   var output = {
+      css: "/stylesheets/index.css",
       title: 'Software Engineer Wannabe',
-      projects: [
-          {link:"#",name:"Advanced C# TeamWork"},
-          {link:"#",name:"Java Fundamentals TeamWork"},
-          {link:"#",name:"Advanced C# TeamWork"},
-          {link:"#",name:"Java Fundamentals TeamWork"},
-          {link:"#",name:"Advanced C# TeamWork"},
-          {link:"#",name:"Java Fundamentals TeamWork"},
-          {link:"#",name:"Advanced C# TeamWork"},
-          {link:"#",name:"Java Fundamentals TeamWork"},
-          {link:"#",name:"Advanced C# TeamWork"},
-          {link:"#",name:"Java Fundamentals TeamWork"},
-          {link:"#",name:"Advanced C# TeamWork"},
-          {link:"#",name:"Java Fundamentals TeamWork"}
-      ],
+      projects: projects.projects,
       mainArticle: {
           Header: "Learning programming is fun!",
           Info: "Just testing",

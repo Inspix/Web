@@ -4,6 +4,9 @@
     <title>{{title}}</title>
     <meta charset="utf-8"/>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    {{#if css}}
+    <link rel='stylesheet' href="{{css}}"/>
+    {{/if}}
 </head>
 <body>
     <input type="checkbox" id="nav-bar-toggle">

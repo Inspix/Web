@@ -4,7 +4,7 @@
 .color-primary-3 { color: #122654 }
 .color-primary-4 { color: #041335 }
 
-
+/* Globals */
 * {
     margin: 0;
     padding: 0;
@@ -36,6 +36,7 @@ a:hover {
 .page {
     margin: auto;
     width: 75%;
+    height: 100%;
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
     -o-transform: translateX(0);
@@ -46,14 +47,18 @@ a:hover {
     transition: transform 0.5s ease;
 }
 
-.mainHeader {
+/* Globals end */
+
+
+/* Header style */
+.main-header {
     display: block;
     background: #122654;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
-.mainHeader h1 {
+.main-header h1 {
     width: auto;
     color: #bbb;
     text-shadow: 2px 2px 1px #566790;
@@ -63,7 +68,9 @@ a:hover {
     line-height: 150px;
     text-align: center;
 }
+/* Header style */
 
+/* Nav toggle symbol */
 .toggle-symbol {
     color: #122654;
     text-shadow: 1px 1px 2px #000;
@@ -115,17 +122,25 @@ a:hover {
     color:#fff;
 }
 
+/* Nav bar toggle end*/
+
+/* Nav bar main style  */
 nav {
     position: fixed;
     left: -200px;
     top: 0;
     width: 200px;
     height: 100%;
+    overflow:scroll;
     background: #122654;
     -webkit-transition: left 0.5s ease;
     -moz-transition: left 0.5s ease;
     -o-transition: left 0.5s ease;
     transition: left 0.5s ease;
+}
+
+nav::-webkit-scrollbar {
+    display: none;
 }
 
 nav .mainMenu {
@@ -135,8 +150,10 @@ nav .mainMenu {
 
 nav a {
     display:block;
-    padding:5px;
+    border-top: 1px solid #355876;
+    padding:8px;
 }
+
 
 nav a:hover {
     background-color: #041335;
@@ -156,7 +173,9 @@ nav a:hover {
 
 .projects {
     display:block;
-    padding: 5px;
+    width:184px;
+    border-top: 1px solid #355876;
+    padding: 8px;
     color:#8B96B0;
     transition: color 0.5s;
 }
@@ -179,6 +198,9 @@ nav a:hover {
 #projects-toggle:checked ~ .projects {
     background-color: #141414;
 }
+/* Nav bar main style end */
+
+/* Tool tip */
 
 label > .tooltip {
     opacity:0;
@@ -249,4 +271,11 @@ label:hover > .tooltip {
     -o-box-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     box-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 
+}
+
+/* Tool tip end*/
+
+/* Main Content */
+.main-content {
+    height:100%;
 }
