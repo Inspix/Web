@@ -1,26 +1,25 @@
  <div class="page">
     <header class="main-header">
-        <h1>{{title}}</h1>
+        <h1>Software Engineer Wannabe</h1>
     </header>
 
     <div class="main-content">
         <article class="main-article">
+            {{#if header}}
             <header>
-                {{#if mainArticle}}
-                    <h2>
-                        {{mainArticle.Header}}
+                <h2>
+                        {{header}}
                     </h2>
-                    <h6>
-                        {{mainArticle.Info}}
+                <h6>
+                        {{info}}
                     </h6>
             </header>
             <div class="main-article-content">
-                <p>{{mainArticle.Text}}</p>
-            {{~^~}}
-                <h2>No articles</h2>
-            {{/if}}
-
+                <p>{{body}}</p>
             </div>
+            {{~^~}}
+            <h2>No articles</h2>
+            {{/if}}
         </article>
     </div>
  </div>

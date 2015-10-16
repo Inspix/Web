@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{title}}</title>
+    <title>Software Engineer Wannabe</title>
     <meta charset="utf-8"/>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     {{#if css}}
     <link rel='stylesheet' href="{{css}}"/>
     {{/if}}
+    {{#if style}}
+        <style>{{style}}</style>
+    {{/if}}
 </head>
 <body>
     <input type="checkbox" id="nav-bar-toggle">
     <label class="toggle-symbol" for="nav-bar-toggle">➺<span class="tooltip">Open/Close menu..</span></label>
-    <nav class="nav">
-        <ul class="mainMenu">
-            <li><a href="/">Home</a></li>
-            <li>
-                <input type="checkbox" id="projects-toggle">
-                <label class="projects" for="projects-toggle">Projects</label>
-                {{#if projects}}
-                <div class="sub-menu-container">
-                    <div class="sub-menu">
-                        <ul class="innerMenu">
-                            {{#each projects}}
-                                <li><a href="{{link}}">{{name}}</a></li>
-                            {{/each}}
-                        </ul>
+    <div class="outerNav">
+        <nav class="nav">
+            <ul class="mainMenu">
+                <li><a href="/">Home</a></li>
+                <li>
+                    <input type="checkbox" id="projects-toggle">
+                    <label class="projects" for="projects-toggle">Projects</label>
+                    {{#if projects}}
+                    <div class="sub-menu-container">
+                        <div class="sub-menu">
+                            <ul class="innerMenu">
+                                {{#each projects}}
+                                    <li><a href="{{link}}">{{name}}</a></li>
+                                {{/each}}
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                {{/if}}
-            </li>
-            <li><a href="#">Stuffs</a></li>
-            <li><a href="#">About me</a></li>
-        </ul>
-    </nav>
+                    {{/if}}
+                </li>
+                <li><a href="#">Stuffs</a></li>
+                <li><a href="#">About me</a></li>
+            </ul>
+        </nav>
+    </div>
 {{{body}}}
 </body>
 </html>

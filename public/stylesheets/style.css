@@ -4,6 +4,7 @@
 .color-primary-3 { color: #122654 }
 .color-primary-4 { color: #041335 }
 
+
 /* Globals */
 * {
     margin: 0;
@@ -93,7 +94,7 @@ a:hover {
     display: none;
 }
 
-#nav-bar-toggle:checked ~ nav {
+#nav-bar-toggle:checked ~ .outerNav {
     left: 0;
 }
 
@@ -125,13 +126,14 @@ a:hover {
 /* Nav bar toggle end*/
 
 /* Nav bar main style  */
-nav {
-    position: fixed;
-    left: -200px;
-    top: 0;
-    width: 200px;
+.outerNav {
+    padding-top: 30px;
+    position:fixed;
+    width: 184px;
     height: 100%;
-    overflow:scroll;
+    left:-200px;
+    top:0;
+    overflow:hidden;
     background: #122654;
     -webkit-transition: left 0.5s ease;
     -moz-transition: left 0.5s ease;
@@ -139,19 +141,22 @@ nav {
     transition: left 0.5s ease;
 }
 
-nav::-webkit-scrollbar {
-    display: none;
+nav {
+    display:block;
+    position:relative;
+    padding-right:40px;
+    width: 200px;
+    height: inherit;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
-nav .mainMenu {
-    position: absolute;
-    top: 30px;
-}
 
 nav a {
     display:block;
     border-top: 1px solid #355876;
-    padding:8px;
+    line-height: 32px;
+    padding:0 8px;
 }
 
 
@@ -175,9 +180,11 @@ nav a:hover {
     display:block;
     width:184px;
     border-top: 1px solid #355876;
-    padding: 8px;
     color:#8B96B0;
+    padding:0 8px;
+    line-height: 32px;
     transition: color 0.5s;
+
 }
 
 .projects:hover {
@@ -187,7 +194,7 @@ nav a:hover {
 }
 
 #projects-toggle:checked ~ .sub-menu-container {
-    max-height: 600px;
+    max-height: 2000px;
     -webkit-transition: max-height 1.5s ease;
     -moz-transition: max-height 1.5s ease;
     -o-transition: max-height 1.5s ease;
